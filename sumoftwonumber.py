@@ -1,0 +1,10 @@
+first = input("Enter your first number = ")
+second = input("Enter your second number = ")
+name = int (first) +int (second)
+
+print("do next sum for third and fourth value")
+third=input("Enter your third number = ")
+fourth=input("Enter your fourth number = ")
+sum=(int(third)+int(fourth))
+print(sum)
+print("your first sum value is = "+str(name) +" and your second sum value is = "+str(sum))
