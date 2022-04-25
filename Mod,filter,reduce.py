@@ -5,21 +5,32 @@ lst = []
 for x in range(n):
     lst.append(x+1)
 
-def Evensum(a,b):
+def Evensum(a,b):  #even using reduce
     return a+b
 
-def Oddsum(a,b):
+def Oddsum(a,b):   #odd using reduce
     return a+b
 
-def number(a):
+def prime():
+    prime = []
+    for y in lst:
+        count = 0
+        for z in lst:
+            if y % z == 0:
+                count = count + 1
+        if count == 2:
+            prime.append(y)
+    print(prime)
+
+def number(a):      #sq,cu, using map
     return a
 
-def squareroot(a):
+def squareroot(a):         #sq  using map
     return a*a
 
 sq=[number,squareroot]
 
-def cuberoot(a):
+def cuberoot(a):           #cu,   using map
     return a**3
 
 cu=[number,cuberoot]
@@ -46,18 +57,17 @@ def cube():
         k=list(map(lambda x:x(z),cu))
         print(k)
 
-def evennumber():
+def evennumber():           #using filter
     k=list(filter(lambda x:x%2==0,lst))
     print(k)
 
-def oddnumber():
+def oddnumber():            ##using filter
     k=list(filter(lambda x:x%2!=0,lst))
     print(k)
 
-
 xz=0
-while (xz<8):
-    k=input("Enter the function name 'ens'=even number sum, / 'ons'=odd number sum, / 'square', / 'cube', / 'even number', / 'odd number', / 'break' = ")
+while (xz<9):
+    k=input("Enter the function name 'ens'=even number sum, / 'ons'=odd number sum, / 'square', / 'cube', / 'even number', / 'odd number', / 'prime no'/ 'break' = ")
     if(k=="break"):
         break
     elif (k == "ens"):
@@ -70,6 +80,8 @@ while (xz<8):
         evennumber()
     elif(k=="odd number"):
         oddnumber()
+    elif(k=="prime no"):
+        prime()
     else:
         cube()
     xz=xz+1
