@@ -11,7 +11,7 @@ def Evensum(a,b):  #even using reduce
 def Oddsum(a,b):   #odd using reduce
     return a+b
 
-def prime():
+def prime(lst):
     prime = []
     for y in lst:
         count = 0
@@ -20,7 +20,7 @@ def prime():
                 count = count + 1
         if count == 2:
             prime.append(y)
-    print(prime)
+    return (prime)
 
 def number(a):      #sq,cu, using map
     return a
@@ -65,9 +65,18 @@ def oddnumber():            ##using filter
     k=list(filter(lambda x:x%2!=0,lst))
     print(k)
 
+def prime_no():
+    k=prime(lst)
+    print(k)
+
+def prime_sum():
+    k=prime(lst)
+    n=reduce(lambda x,y:x+y,k)
+    print(n)
+
 xz=0
-while (xz<9):
-    k=input("Enter the function name 'ens'=even number sum, / 'ons'=odd number sum, / 'square', / 'cube', / 'even number', / 'odd number', / 'prime no'/ 'break' = ")
+while (xz<10):
+    k=input("Enter the function name 'ens'=even number sum, / 'ons'=odd number sum, / 'square', / 'cube', / 'even number', / 'odd number', / 'prime no' / 'prime sum', / 'break', / = ")
     if(k=="break"):
         break
     elif (k == "ens"):
@@ -81,7 +90,9 @@ while (xz<9):
     elif(k=="odd number"):
         oddnumber()
     elif(k=="prime no"):
-        prime()
+        prime_no()
+    elif(k=="prime sum"):
+        prime_sum()
     else:
         cube()
     xz=xz+1
