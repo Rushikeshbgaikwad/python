@@ -7,4 +7,4 @@ name = "Rushikesh Babu Gaikwad"
 
 
 r=str(input("Enter your full name = "))
-print(r)
+print(f"my full name is {r}")
